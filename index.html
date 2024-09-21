@@ -1,0 +1,388 @@
+<!doctype html>
+<html>
+    <head> 
+        <meta charset="UTF-8"> 
+        <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+        <link rel="icon" href="image/icon.png" type="image/x-icon">
+        <link rel="stylesheet" href="css/ttf.css">
+        <link rel="stylesheet" href="css/sy.css">
+        <link rel="stylesheet" href="css/alert.css">
+        <link rel="stylesheet" href="bootstrap/bootstrap.css">
+        <script src="bootstrap/bootstrap.js"></script>
+        <title>个人主页___一抹云烟</title>
+    </head>
+      
+      <style>
+        /*整体样式*/
+        *{
+          margin: 0;
+          padding: 0;
+          }
+        body{
+          background-color: #fff;
+          }
+        html {
+          font-size: 16px; /* 默认基准值 */
+          }
+        @media (min-width: 1024px) {
+          html {
+            font-size: 14px; /* 适配较大屏幕 */
+            }
+          }
+        @media (min-width: 1440px) {
+          html {
+            font-size: 16px; /* 适配超大屏幕 */
+            }
+          }
+          
+        /*导航栏样式*/
+        .div1{
+          width: 100%;
+          height: 50px;
+          /*border-bottom: 1px black solid;*/
+          display: flex;
+          align-Items: center;
+          justify-content: center;
+          }
+        .div2 ,.div3 ,.div4{
+          height: 80%;
+          width: 80px;
+          background-color: transparent;
+          margin: 10px;
+          display: flex;
+          align-Items: center;
+          justify-content: center;
+          border-color: skyblue;
+          transition: 0.2s;
+          }
+        .div2{
+          border-bottom: 3px skyblue solid;
+          font-weight: bold;
+          }
+        /*分割线样式*/
+        .hr1{
+          width: 90%;
+          height: 1px;
+          background-color: #ededed;
+          margin: 20px auto;
+          }
+        /*主体样式*/
+        .div5{
+          width: 90%;
+          height: 500px;
+          margin: auto;
+          border: 1px yellowgreen solid;
+          }
+        #sy{
+          display: block;
+          width: 100%;
+          height: 100%;
+          border: 0px;
+          }
+        #yy{
+          display: none;
+          width: 100%;
+          height: 100%;
+          border: 0px;
+          overflow: auto;
+          text-align: center;
+          }
+        #fl{
+          display: none;
+          width: 100%;
+          height: 100%;
+          border: 0px;
+          }
+        /*应用列表样式*/  
+        .yyp1{
+          width: 85%;
+          height: 40px;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: auto;
+          border-bottom: 1px #ededed solid;
+          }
+        .yydiv1{
+          width: 90%;
+          height: 50px;
+          border-radius: 1em;
+          margin: 10px auto;
+          border: 1px #7A2EFF solid;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: bold;
+          transition: 1s;
+          }
+        .yydiv1:hover{
+          background-color: #7A2EFF;
+          color: #ffffff;
+          }
+        .yydiv1:hover .yya1{
+          color:#17FF8D;
+          }
+        /*工具列表样式*/
+        .flp1{
+          width: 85%;
+          height: 40px;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: auto;
+          border-bottom: 1px #ededed solid;
+          }
+        .fldiv1{
+          width: 100%;
+          height: 100px;
+          margin: 10px auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          font-size: 12px;
+          }
+        .fldiv2 ,.fldiv3 ,.fldiv4{
+          width: 0;
+          height: 100%;
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          }
+        .flimg1{
+          width: 50px;
+          height: 50px;
+          background-color: #1591E2;
+          border-radius: 0.4em;
+          border: 3px #000000 dashed;
+          transition: 0.3s;
+          }
+        .flimg1:hover{
+          border: 3px #DCFFD1 solid;
+          }
+      </style>
+      
+    <body> 
+        <!--导航栏结构-->
+        <div class="div1">
+          <div class="div2" id="div2">首页</div>
+          <div class="div3" id="div3">应用</div>
+          <div class="div4" id="div4">工具</div>
+        </div>
+        <!--分割线-->
+        <div class="hr1"></div>
+        
+        <!--主体-->
+        <div class="div5">
+          <!--首页-->
+          <div id="sy">
+            <div class="sydiv1">
+              <img alt="加载图片失败" src="image/Individual.png" class="syimg1"/>
+            </div>
+            <!--首页内容-->
+            <div class="sydiv2">
+              <p id="year">2024-08-29</p>
+              &nbsp;
+              <p id="hours">21:29:00</p>
+            </div>
+            <div class="sydiv3" onclick="javascript:window.open('html/公益外挂/index.html')">
+              ---公益外挂---
+            </div>
+            <div class="sydiv3" id="user">
+              ---User---
+            </div>
+            <div class="sydiv4">
+              <div class="sydiv5">
+                <img id="syks" src="image/ks.png" class="syimg2">
+              </div>
+              <div class="sydiv6">
+                <img id="syqq" src="image/QQ.png" class="syimg2">
+              </div>
+              <div class="sydiv7">
+                <img id="sywx" src="image/wx.png" class="syimg2">
+              </div>
+            </div>
+            <p style="text-align:center;">网站搭建于2024-08-29<br><b>个人声明，不承担任何责任</b><br><i style="color:red;">请勿用于非法用途</i></p>
+          </div>
+          
+          <!--应用区-->
+          <div id="yy">
+            <p class="yyp1">应用推荐</p>
+          </div>
+          
+          <!--分类区-->
+          <div id="fl">
+            <p class="flp1">在线工具</p>
+            
+            <!--工具一栏-->
+            <div class="fldiv1">
+              <div class="fldiv2">
+                <span class="flsp1" id="flsp1">
+                  <img src="image/flicon.png" class="flimg1">
+                  <br>
+                  <p>二维码生成</p>
+                </span>
+              </div>
+              <div class="fldiv3">
+                <span class="flsp1" id="flsp2">
+                  <img src="image/flicon.png" class="flimg1">
+                  <br>
+                  <p>Unicode</p>
+                </span>
+              </div>
+              <div class="fldiv4">
+                <span class="flsp1" id="flsp3">
+                  <img src="image/flicon.png" class="flimg1">
+                  <br>
+                  <p>Js混淆</p>
+                </span>
+              </div> 
+            </div>
+            
+            <!--工具二栏-->
+            <div class="fldiv1">
+              <div class="fldiv2">
+                <span class="flsp1" id="flsp4">
+                  <img src="image/flicon.png" class="flimg1">
+                  <br>
+                  <p>手速测试</p>
+                </span>
+              </div>
+              <div class="fldiv3">
+                <span class="flsp1" id="flsp5">
+                  <img src="image/flicon.png" class="flimg1">
+                  <br>
+                  <p>文件查看器</p>
+                </span>
+              </div>
+              <div class="fldiv4">
+                <span class="flsp1" id="flsp6">
+                  <img src="image/flicon.png" class="flimg1">
+                  <br>
+                  <p>屏幕坐标获取</p>
+                </span>
+              </div> 
+            </div>
+            
+            <!--工具三栏-->
+            <div class="fldiv1">
+              <div class="fldiv2">
+                <span class="flsp1" id="flsp7">
+                  <img src="image/flicon.png" class="flimg1">
+                  <br>
+                  <p>自定义按钮样式</p>
+                </span>
+              </div>
+              <div class="fldiv3">
+                <span class="flsp1" id="flsp8">
+                  <img src="image/flicon.png" class="flimg1">
+                  <br>
+                  <p>自定义div样式</p>
+                </span>
+              </div>
+              <div class="fldiv4">
+                <span class="flsp1" id="flsp9">
+                  <img src="image/flicon.png" class="flimg1">
+                  <br>
+                  <p>wx钱包模拟</p>
+                </span>
+              </div> 
+            </div>
+            
+          </div>
+        </div>
+        
+        <!--弹窗结构-->
+        <div id="div6" class="div6">
+          <div id="alertdiv1" class="alertdiv1">
+            <p id="alertp1" class="alertp1">微信</p>
+            <h4 id="alerth1">微信号：wenjiayu080618</h4>
+            <div class="alertdiv2">
+              <div id="alertdiv3" class="alertdiv3">复制</div>
+              <div id="alertdiv4" class="alertdiv4">取消</div>
+            </div>
+          </div>
+        </div>
+    </body>
+    
+    <script>
+      //ID获取
+      var div2 = document.getElementById("div2");
+      var div3 = document.getElementById("div3");
+      var div4 = document.getElementById("div4");
+      var sy = document.getElementById("sy");
+      var yy = document.getElementById("yy");
+      var fl = document.getElementById("fl");
+      
+      //导航栏点击样式
+      function dv234(obj,obj1,obj2){
+        obj.style.fontWeight = "bold";
+        obj1.style.fontWeight = "normal";
+        obj2.style.fontWeight = "normal";
+        obj.style.borderBottom = "3px skyblue solid";
+        obj1.style.borderBottom = "0px skyblue solid";
+        obj2.style.borderBottom = "0px skyblue solid";
+      }
+      
+      //中心内容_隐藏/显示_效果
+      function syf(obj,obj1,obj2){
+        obj.style.display = "block";
+        obj1.style.display = "none";
+        obj2.style.display = "none"
+      }
+      
+      //设置点击事件并调用函数
+      div2.onclick = function (){
+        dv234(div2,div3,div4);
+        syf(sy,yy,fl);
+        
+      }
+      div3.onclick = function (){
+        dv234(div3,div2,div4);
+        syf(yy,sy,fl);
+      }
+      div4.onclick = function (){
+        dv234(div4,div3,div2);
+        syf(fl,yy,sy);
+      }
+    </script>
+    <script src="js/time.js"></script>
+    <script src="js/clipboard.js"></script>
+    <script src="js/sy.js"></script>
+    <script src="js/yy.js"></script>
+    <script>
+      var flsp1 = document.getElementById("flsp1");
+      var flsp2 = document.getElementById("flsp2");
+      var flsp3 = document.getElementById("flsp3");
+      var flsp4 = document.getElementById("flsp4");
+      var flsp5 = document.getElementById("flsp5");
+      var flsp6 = document.getElementById("flsp6");
+      var flsp7 = document.getElementById("flsp7");
+      var flsp8 = document.getElementById("flsp8");
+      var flsp9 = document.getElementById("flsp9");
+      function flsp(obj,obj1){
+        obj.onclick = function (){
+          setTimeout(function (){
+            window.location = obj1;
+          },500)
+        }
+      }
+      flsp(flsp1,"html/二维码生成/index.html");
+      flsp(flsp2,"html/unicode/index.html");
+      flsp(flsp3,"https://www.jyshare.com/front-end/6939/");
+      flsp(flsp4,"html/手速测试/index.html");
+      flsp(flsp5,"html/文件查看器/index.html");
+      flsp(flsp6,"html/屏幕坐标获取/index.html");
+      flsp(flsp7,"html/自定义btn样式/index.html");
+      flsp(flsp8,"html/自定义div样式/index.html");
+      flsp(flsp9,"html/vx钱包模拟/index.html");
+      
+      var user = document.getElementById("user")
+      user.onclick = function (){
+        window.location = "user.html";
+      }
+    </script>
+</html>

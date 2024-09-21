@@ -1,0 +1,309 @@
+<!doctype html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+      <title>user</title>
+    </head>
+      <style>
+        *{
+          margin: 0;
+          padding: 0;
+          }
+        body{
+          /*display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;*/
+          }
+        .divimg{
+          width: 50px;
+          height: 50px;
+          margin: 20px auto;
+          }
+        .img1{
+          width: 100%;
+          height: 100%;
+          }
+        p{
+          width: 100%;
+          font-size: 20px;
+          text-align: center;
+          font-weight: bold;
+          margin-bottom: 30px;
+          }
+        .input1{
+          width: 180px;
+          height: 40px;
+          margin: 10px;
+          border: 1px black solid;
+          letter-spacing: 10px;
+          font-size: 20px;
+          font-weight: bold;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 30px auto;
+          text-align: center;
+          background-color: transparent;
+          }
+        .div1{
+          width: 300px;
+          height: 400px;
+          /*border: 1px black solid;*/
+          margin: 10px auto;
+          }
+        .div1 span{
+          font-weight: bold;
+          font-size: 18px;
+          transition: 0.3s;
+          }
+        .div2 ,.div3 ,.div4 ,.div5{
+          width: 90%;
+          height: 50px;
+          border: 1px black solid;
+          margin: 3px auto;
+          display: flex;
+          box-shadow: 3px 3px 3px #5A5A5A;
+          }
+        .sp1 ,.sp2 ,.sp3{
+          width: 0;
+          height: 100%;
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          }
+        .sp4 ,.sp5 ,.sp6{
+          width: 0;
+          height: 100%;
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          }
+        .sp7 ,.sp8 ,.sp9{
+          width: 0;
+          height: 100%;
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          }
+        .spm ,.sp0 ,.sp{
+          width: 0;
+          height: 100%;
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          }
+        .sp1 ,.sp2 ,.sp4 ,.sp5 ,.sp7 ,.sp8 ,.spm ,.sp0{
+          border-right: 1px black solid;
+          }
+        .img2 ,.img3{
+          width: 50%;
+          height: 50%;
+          }
+        span:hover{
+          background-color: #ededed;
+          }
+      </style>
+    <body>
+      <!--标题-->
+      <div class="divimg">
+        <img class="img1" src="svg/user-circle.svg" alt="user">
+      </div>
+      <p>User&nbsp;&nbsp;Password</p>
+      <input type="password" disabled id="input1" class="input1" value="" maxlength="6" placeholder="请输入密码">
+      
+      <!--承载-->
+      <div class="div1">
+      
+        <!--密码输入结构-->
+        <div class="div2">
+          <span class="sp1" id="sp1">1</span>
+          <span class="sp2" id="sp2">2</span>
+          <span class="sp3" id="sp3">3</span>
+        </div>
+        
+        <div class="div3">
+          <span class="sp4" id="sp4">4</span>
+          <span class="sp5" id="sp5">5</span>
+          <span class="sp6" id="sp6">6</span>
+        </div>
+        
+        <div class="div4">
+          <span class="sp7" id="sp7">7</span>
+          <span class="sp8" id="sp8">8</span>
+          <span class="sp9" id="sp9">9</span>
+        </div>
+        
+        <div class="div5">
+          <span class="spm" id="go"><img src="svg/arrow-circle-right.svg" class="img2" alt="确认"/></span>
+          <span class="sp0" id="sp0">0</span>
+          <span class="sp" id="x"><img src="svg/window-close.svg" class="img3" alt="回退"/></span>
+        </div>
+        
+        <!--功能-->
+        <div class="div5">
+          <span class="spm" id="ey"><img id="eyimg" src="svg/eye-slash.svg" class="img2" alt="显示/隐藏"/></span>
+          <span class="sp0" id="getpass"><img src="svg/address-book.svg" class="img2" alt="获取密码"/></span>
+          <span class="sp" id="clear"><img src="svg/ban.svg" class="img3" alt="清除"/></span>
+        </div>
+        
+        <!--提示-->
+        <p id="pp"></p>
+        
+      </div>
+      
+    </body>
+    
+      <script>
+        //密码0 ~ 9输入设置
+        var input1 = document.getElementById("input1");
+        function pass(obj,obj1){
+          var put = document.getElementById(obj);
+          put.onclick = function (){
+            //密码长度
+            if (input1.value.length == 6){
+              null;
+            }else{
+              input1.value += obj1;
+            }
+          }
+        }
+        //调用函数
+        pass("sp1",1);
+        pass("sp2",2);
+        pass("sp3",3);
+        pass("sp4",4);
+        pass("sp5",5);
+        pass("sp6",6);
+        pass("sp7",7);
+        pass("sp8",8);
+        pass("sp9",9);
+        pass("sp0",0);
+        //密码回退
+        var x = document.getElementById("x");
+        x.addEventListener("click" ,function (){
+          var inputvalue = input1.value;
+          if (input1.value.length > 0){
+            input1.value = inputvalue.substring(0, inputvalue.length - 1);
+          }else{
+            null;
+          }
+        })
+        //密码检测
+        var go = document.getElementById("go");
+        var i = 0;
+        go.addEventListener("click" ,function(){
+          var _0x5cd537=_0x1b61;
+          (function(_0x9c54c2,_0x48e89e){
+            var _0x8a8b7e=_0x1b61,_0x383ecc=_0x9c54c2();
+            while(!![]){
+              try{
+                var _0x259050=parseInt(_0x8a8b7e(0x172))/
+                  (0x1*-0x1663+0x1a77+0x95*-0x7)+-parseInt(_0x8a8b7e(0x170))/
+                  (-0x1d8d+0x237b+-0x5ec)*(-parseInt(_0x8a8b7e(0x17a))/
+                  (0x2*0x6df+-0x205d*0x1+0x12a2))+parseInt(_0x8a8b7e(0x171))/
+                  (-0x140a+0x202*0xa+-0x6)+parseInt(_0x8a8b7e(0x177))/
+                  (-0x4*-0x207+0x23e7+0x2*-0x15ff)*(parseInt(_0x8a8b7e(0x173))/
+                  (-0x35*0x29+0xb9d+-0x31a))+-parseInt(_0x8a8b7e(0x174))/
+                  (0x1*0x1829+0x19b2+-0x2*0x18ea)+parseInt(_0x8a8b7e(0x175))/
+                  (0x989*0x4+-0x4*-0xcd+-0x2950)*(parseInt(_0x8a8b7e(0x176))/
+                  (-0x3*0x303+0x1*0x2221+-0x190f))+-parseInt(_0x8a8b7e(0x16f))/
+                  (-0x169*0x12+-0x1b4*-0xb+0x6b0);
+                if(_0x259050===_0x48e89e)
+                  break;
+                  else _0x383ecc['push'](_0x383ecc['shift']());
+                  }catch(_0xe089d2){
+                    _0x383ecc['push'](_0x383ecc['shift']());
+                    }
+                  }
+                }
+                (_0x4775,-0x10bd1+0xe7f23*-0x1+0x1f*0xbd03));
+                function _0x1b61(_0x54f2bf,_0x32e003){
+                  var _0x8863fe=_0x4775();
+                  return _0x1b61=function(_0x20ce77,_0x286b25){
+                    _0x20ce77=_0x20ce77-(-0x1*-0xd79+0xd34+-0x193e);
+                    var _0x4501f7=_0x8863fe[_0x20ce77];
+                    return _0x4501f7;
+                },
+                _0x1b61(_0x54f2bf,_0x32e003);
+              }
+              var M1=encodeURIComponent(window[_0x5cd537(0x179)](_0x5cd537(0x178)));
+              function _0x4775(){
+              var _0x3fca86=[
+                '2epDTIZ',
+                '1862792evXfmM',
+                '430494dgVHWc',
+                '6UZcGiw',
+                '270809nhksid',
+                '7258232JMsxLB',
+                '9AZdHOa',
+                '2761185lavVHu',
+                'NDgzNzA4',
+                'atob',
+                '2732769DmBeIj',
+                '27465590gcjcZO'
+                ];
+              _0x4775=function(){
+                return _0x3fca86;
+              };
+              return _0x4775();
+            }
+          var M2=M1/(-0x5e2+0x1fe8+-0x24*0xb9);
+          var M3=M2/(0x1*-0x1a05+0x76*0x25+0x8fa);
+          if (input1.value == M3){
+            var http = new XMLHttpRequest();
+            http.onreadystatechange = function (){
+              var Json = JSON.parse(this.responseText);
+              var Json1 = Json.href;
+              document.getElementById("pp").style.color = "green";
+              document.getElementById("pp").innerHTML = "密码正确，跳转中…";
+              setTimeout(function (){
+                window.location = Json1;
+              },1500)
+            }
+            http.open('GET' ,"index.php?password=" + M3);
+            http.send();
+            /*window.open("index.php?password=" + M3);*/
+          }else{
+            i += 1;
+            document.getElementById("pp").innerHTML = "密码错误" + i + "次";
+            document.getElementById("pp").style.color = "red";
+          }
+        })
+        
+        //ID获取
+        var ey = document.getElementById("ey");
+        var Clear = document.getElementById("clear");
+        var eyimg = document.getElementById("eyimg");
+        //密码是否可见
+        ey.onclick = function (){
+          if (input1.type == "password"){
+            input1.type = "text";
+            eyimg.src = "svg/eye.svg";
+          }else{
+            input1.type = "password";
+            eyimg.src = "svg/eye-slash.svg";
+          }
+        }
+        //清除密码
+        Clear.onclick = function (){
+          input1.value = "";
+        }
+        //提示
+        var getpass = document.getElementById("getpass");
+        getpass.onclick = function (){
+          var lx = confirm("未开放\n需要密码请联系作者");
+          if (lx == true){
+            window.location = "https://api.1xz.icu/api/tiaozhuanqqziliao?qq=1709138965";
+          }else{
+            alert("由于资金紧张\n带来的体验不佳请谅解");
+          }
+        }
+      </script>
+    
+</html>
